@@ -2,7 +2,15 @@ import React from 'react'
 import './App.css'
 
 function App() {
-  return <div className="App"></div>
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col">1 of 2</div>
+        <div className="col">2 of 2</div>
+        <div className="col">2 of 2</div>
+      </div>
+    </div>
+  )
 }
 
 export default App
