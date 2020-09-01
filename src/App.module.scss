@@ -1,0 +1,23 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5) 0,
+      transparent 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url('./img/bg.png');
+}
+
+.App h1 {
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-family: 'Exo2.0-Thin';
+  font-size: 36px;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px #000;
+  margin-bottom: 15px;
+}

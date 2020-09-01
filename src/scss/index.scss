@@ -1,1 +1,8 @@
-@import './bootstrap-grid.scss';
+@import 'colors';
+@import 'fonts';
+@import 'libs';
+
+body {
+  font-family: 'TrebuchetMS', sans-serif;
+  margin: 0;
+}

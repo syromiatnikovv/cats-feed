@@ -1,0 +1,178 @@
+@import '../../scss/colors.scss';
+
+.Card {
+  margin-bottom: 40px;
+
+  &:not(.disabled) .Outer:hover {
+    background: linear-gradient(
+      135deg,
+      transparent 30px,
+      lighten($blue, 10%) 0
+    );
+
+    .Weight {
+      background: lighten($blue, 10%);
+    }
+  }
+
+  &.selected {
+    .Outer {
+      background: linear-gradient(135deg, transparent 30px, $pink 0);
+
+      &:hover {
+        background: linear-gradient(
+          135deg,
+          transparent 30px,
+          lighten($pink, 10%) 0
+        );
+
+        .Weight {
+          background: lighten($pink, 10%);
+        }
+      }
+    }
+
+    .Weight {
+      background: $pink;
+    }
+  }
+
+  &.disabled {
+    .Outer {
+      background: linear-gradient(135deg, transparent 30px, $gray 0);
+      cursor: not-allowed;
+    }
+
+    .Inner::before {
+      opacity: 0.5;
+    }
+
+    .Weight {
+      background: $gray;
+    }
+
+    .TopText,
+    .Title,
+    .SubTitle,
+    .Features {
+      color: $gray;
+    }
+
+    .TopText,
+    .SubTitle,
+    .Features {
+      opacity: 0.5;
+    }
+
+    .TextUnderCard {
+      color: $yellow;
+    }
+  }
+}
+
+.Outer {
+  position: relative;
+  border-radius: 8px;
+  background: linear-gradient(135deg, transparent 30px, $blue 0);
+  width: 320px;
+  height: 480px;
+  cursor: pointer;
+}
+
+.Inner {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, transparent 28px, #f2f2f2 0);
+  width: 312px;
+  height: 472px;
+  padding: 20px 10px 10px 45px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url('../../img/cat.png') -25px 200px no-repeat;
+  }
+}
+
+.TopText {
+  font-size: 16px;
+  line-height: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.Title,
+.SubTitle {
+  font-weight: bold;
+  color: #000;
+}
+
+.Title {
+  font-size: 48px;
+  line-height: 48px;
+  margin-bottom: 5px;
+}
+
+.SubTitle {
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.Features {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  color: #666;
+
+  li {
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 2px;
+  }
+}
+
+.Weight {
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 80px;
+  width: 80px;
+  background: $blue;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 21px;
+  line-height: 21px;
+  color: #fff;
+
+  strong {
+    font-weight: normal;
+    font-size: 42px;
+    line-height: 42px;
+  }
+}
+
+.TextUnderCard {
+  color: #fff;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  text-shadow: 1px 1px 1px #000;
+
+  a {
+    color: $blue;
+    border-bottom: 1px dashed $blue;
+    text-decoration: none;
+
+    &:hover {
+      color: lighten($blue, 10%);
+    }
+  }
+}
