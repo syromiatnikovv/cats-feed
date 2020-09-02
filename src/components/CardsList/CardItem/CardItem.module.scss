@@ -1,9 +1,9 @@
-@import '../../scss/colors.scss';
+@import '../../../scss/colors';
 
-.Card {
+.CardItem {
   margin-bottom: 40px;
 
-  &:not(.disabled) .Outer:hover {
+  &:not(.CardItem__disabled) .Outer__hovered:not(.Outer__clicked) {
     background: linear-gradient(
       135deg,
       transparent 30px,
@@ -15,19 +15,23 @@
     }
   }
 
-  &.selected {
+  &__selected {
     .Outer {
       background: linear-gradient(135deg, transparent 30px, $pink 0);
 
-      &:hover {
+      &__hovered:not(.Outer__clicked) {
         background: linear-gradient(
           135deg,
           transparent 30px,
           lighten($pink, 10%) 0
-        );
+        ) !important;
 
         .Weight {
-          background: lighten($pink, 10%);
+          background: lighten($pink, 10%) !important;
+        }
+
+        .TopText {
+          color: lighten($pink, 10%);
         }
       }
     }
@@ -37,7 +41,7 @@
     }
   }
 
-  &.disabled {
+  &__disabled {
     .Outer {
       background: linear-gradient(135deg, transparent 30px, $gray 0);
       cursor: not-allowed;
@@ -96,7 +100,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background: url('../../img/cat.png') -25px 200px no-repeat;
+    background: url('../../../img/cat.png') -25px 200px no-repeat;
   }
 }
 
@@ -166,10 +170,11 @@
   font-size: 13px;
   text-shadow: 1px 1px 1px #000;
 
-  a {
+  strong {
+    font-weight: normal;
     color: $blue;
     border-bottom: 1px dashed $blue;
-    text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       color: lighten($blue, 10%);
